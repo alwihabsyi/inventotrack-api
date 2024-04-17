@@ -14,7 +14,7 @@ class CreateStatusPinjamsTable extends Migration
     public function up()
     {
         Schema::create('status_pinjams', function (Blueprint $table) {
-            $table->id("id_pinjam");
+            $table->id("id");
             $table->dateTime("tanggal_pinjam");
             $table->string("posisi");
             $table->string("status");

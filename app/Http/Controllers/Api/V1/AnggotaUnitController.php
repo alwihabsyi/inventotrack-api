@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreAnggotaUnitRequest;
 use App\Http\Requests\UpdateAnggotaUnitRequest;
 use App\Models\AnggotaUnit;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\AnggotaUnitCollection;
+use App\Http\Resources\V1\AnggotaUnitResource;
 
 class AnggotaUnitController extends Controller
 {
@@ -15,7 +18,7 @@ class AnggotaUnitController extends Controller
      */
     public function index()
     {
-        //
+        return new AnggotaUnitCollection(AnggotaUnit::paginate());
     }
 
     /**
@@ -47,7 +50,11 @@ class AnggotaUnitController extends Controller
      */
     public function show(AnggotaUnit $anggotaUnit)
     {
-        //
+        if (!$anggotaUnit) {
+            return response()->json(['message' => 'AnggotaUnit not found'], 404);
+        }
+        
+        return new AnggotaUnitResource($anggotaUnit);
     }
 
     /**

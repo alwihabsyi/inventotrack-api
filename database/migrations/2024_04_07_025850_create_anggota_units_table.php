@@ -14,7 +14,7 @@ class CreateAnggotaUnitsTable extends Migration
     public function up()
     {
         Schema::create('anggota_units', function (Blueprint $table) {
-            $table->id("id_anggota");
+            $table->id("id");
             $table->integer("unit_kerja_id");
             $table->string("nama_anggota");
             $table->integer("jumlah_barang");

@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUnitKerjaRequest;
 use App\Http\Requests\UpdateUnitKerjaRequest;
+use App\Http\Resources\V1\UnitKerjaCollection;
+use App\Http\Resources\V1\UnitKerjaResource;
 use App\Models\UnitKerja;
 
 class UnitKerjaController extends Controller
@@ -15,7 +18,7 @@ class UnitKerjaController extends Controller
      */
     public function index()
     {
-        //
+        return new UnitKerjaCollection(UnitKerja::paginate());
     }
 
     /**
@@ -47,7 +50,7 @@ class UnitKerjaController extends Controller
      */
     public function show(UnitKerja $unitKerja)
     {
-        //
+        return new UnitKerjaResource($unitKerja);
     }
 
     /**

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreStatusPinjamRequest;
-use App\Http\Requests\UpdateStatusPinjamRequest;
-use App\Models\StatusPinjam;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreHistoryBarangRequest;
+use App\Http\Requests\UpdateHistoryBarangRequest;
+use App\Models\HistoryBarang;
 
-class StatusPinjamController extends Controller
+class HistoryBarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class StatusPinjamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreStatusPinjamRequest  $request
+     * @param  \App\Http\Requests\StoreHistoryBarangRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreStatusPinjamRequest $request)
+    public function store(StoreHistoryBarangRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class StatusPinjamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\StatusPinjam  $statusPinjam
+     * @param  \App\Models\HistoryBarang  $historyBarang
      * @return \Illuminate\Http\Response
      */
-    public function show(StatusPinjam $statusPinjam)
+    public function show(HistoryBarang $historyBarang)
     {
         //
     }
@@ -53,10 +54,10 @@ class StatusPinjamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\StatusPinjam  $statusPinjam
+     * @param  \App\Models\HistoryBarang  $historyBarang
      * @return \Illuminate\Http\Response
      */
-    public function edit(StatusPinjam $statusPinjam)
+    public function edit(HistoryBarang $historyBarang)
     {
         //
     }
@@ -64,11 +65,11 @@ class StatusPinjamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateStatusPinjamRequest  $request
-     * @param  \App\Models\StatusPinjam  $statusPinjam
+     * @param  \App\Http\Requests\UpdateHistoryBarangRequest  $request
+     * @param  \App\Models\HistoryBarang  $historyBarang
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateStatusPinjamRequest $request, StatusPinjam $statusPinjam)
+    public function update(UpdateHistoryBarangRequest $request, HistoryBarang $historyBarang)
     {
         //
     }
@@ -76,10 +77,10 @@ class StatusPinjamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\StatusPinjam  $statusPinjam
+     * @param  \App\Models\HistoryBarang  $historyBarang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StatusPinjam $statusPinjam)
+    public function destroy(HistoryBarang $historyBarang)
     {
         //
     }

@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Requests\StoreInventoryRequest;
-use App\Http\Requests\UpdateInventoryRequest;
-use App\Models\Inventory;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreStatusPinjamRequest;
+use App\Http\Requests\UpdateStatusPinjamRequest;
+use App\Models\StatusPinjam;
 
-class InventoryController extends Controller
+class StatusPinjamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class InventoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreInventoryRequest  $request
+     * @param  \App\Http\Requests\StoreStatusPinjamRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreInventoryRequest $request)
+    public function store(StoreStatusPinjamRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class InventoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Inventory  $inventory
+     * @param  \App\Models\StatusPinjam  $statusPinjam
      * @return \Illuminate\Http\Response
      */
-    public function show(Inventory $inventory)
+    public function show(StatusPinjam $statusPinjam)
     {
         //
     }
@@ -53,10 +54,10 @@ class InventoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Inventory  $inventory
+     * @param  \App\Models\StatusPinjam  $statusPinjam
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inventory $inventory)
+    public function edit(StatusPinjam $statusPinjam)
     {
         //
     }
@@ -64,11 +65,11 @@ class InventoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateInventoryRequest  $request
-     * @param  \App\Models\Inventory  $inventory
+     * @param  \App\Http\Requests\UpdateStatusPinjamRequest  $request
+     * @param  \App\Models\StatusPinjam  $statusPinjam
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateInventoryRequest $request, Inventory $inventory)
+    public function update(UpdateStatusPinjamRequest $request, StatusPinjam $statusPinjam)
     {
         //
     }
@@ -76,10 +77,10 @@ class InventoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Inventory  $inventory
+     * @param  \App\Models\StatusPinjam  $statusPinjam
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inventory $inventory)
+    public function destroy(StatusPinjam $statusPinjam)
     {
         //
     }
