@@ -50,10 +50,6 @@ class AnggotaUnitController extends Controller
      */
     public function show(AnggotaUnit $anggotaUnit)
     {
-        if (!$anggotaUnit) {
-            return response()->json(['message' => 'AnggotaUnit not found'], 404);
-        }
-        
         return new AnggotaUnitResource($anggotaUnit);
     }
 

@@ -20,4 +20,14 @@ class AnggotaUnit extends Model
     public function statusPinjam() {
         return $this->hasMany(StatusPinjam::class);
     }
+    
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'unit_kerja_id';
+    }
 }

@@ -20,8 +20,8 @@ class UnitKerjaSeeder extends Seeder
             ->create();
 
         UnitKerja::factory()
-            ->count(40)
-            ->hasAnggota(20)
+            ->count(20)
+            ->hasAnggota(5)
             ->create();
     }
 }

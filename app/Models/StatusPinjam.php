@@ -20,4 +20,21 @@ class StatusPinjam extends Model
     public function unitKerja() {
         return $this->belongsTo(UnitKerja::class);
     }
+    
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
+    ];
+    
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'anggota_unit_id';
+    }
+
 }
