@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UnitKerjaFactory extends Factory
 {
+    protected static $firstName = [
+        'Agus', 'Anton', 'Budi', 'Dodi', 'Eko', 'Firman', 'Ganda', 'Hadi', 'Indra', 'Joko',
+        'Krisna', 'Lukman', 'Maman', 'Nur', 'Opik', 'Prabowo', 'Rudi', 'Sigit', 'Tono', 'Yoga',
+        'Ani', 'Bunga', 'Citra', 'Desi', 'Eva', 'Fitri', 'Gita', 'Hani', 'Ina', 'Juni',
+        'Kartika', 'Lina', 'Mira', 'Nina', 'Rina', 'Sari', 'Tika', 'Yuni', 'Wati', 'Zahra'
+    ];
+
     /**
      * Define the model's default state.
      *
@@ -15,7 +22,7 @@ class UnitKerjaFactory extends Factory
      */
     public function definition()
     {
-        $namaUnit = "Unit " . $this->faker->firstName();
+        $namaUnit = "Unit " . $this->faker->randomElement(static::$firstName);
 
         return [
             'nama_unit' => $namaUnit,

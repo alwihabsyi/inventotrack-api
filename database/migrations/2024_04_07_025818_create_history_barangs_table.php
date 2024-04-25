@@ -16,6 +16,7 @@ class CreateHistoryBarangsTable extends Migration
         Schema::create('history_barang', function (Blueprint $table) {
             $table->id("id");
             $table->integer("inventory_id");
+            $table->integer("status_pinjams_id");
             $table->string("bukti_ambil");
             $table->dateTime("tanggal_ambil");
             $table->timestamps();

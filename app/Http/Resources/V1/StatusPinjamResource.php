@@ -15,9 +15,22 @@ class StatusPinjamResource extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->resource->map(function ($statusPinjam) {
-            return $this->formatStatusPinjam($statusPinjam);
-        });
+        return [
+            'data' => $this->resource->map(function ($statusPinjam) {
+                return $this->formatStatusPinjam($statusPinjam);
+            }),
+            'links' => [
+                'first' => $this->firstItem(),
+                'last' => $this->lastItem(),
+                'prev' => $this->previousPageUrl(),
+                'next' => $this->nextPageUrl(),
+            ],
+            'meta' => [
+                'current_page' => $this->currentPage(),
+                'per_page' => $this->perPage(),
+                'total' => $this->total(),
+            ]
+        ];
     }
 
     protected function formatStatusPinjam($statusPinjam)
@@ -27,6 +40,7 @@ class StatusPinjamResource extends JsonResource
         return [
             'id' => $statusPinjam->id,
             'namaBarang' => $inventory->nama_barang,
+            'kodeBarang' => $inventory->kode_barang,
             'fotoBarang' => $inventory->gambar_barang,
             'jumlah' => $statusPinjam->jumlah_pinjam,
             'posisi' => $statusPinjam->posisi,

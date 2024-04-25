@@ -21,6 +21,12 @@ class AnggotaUnit extends Model
         return $this->hasMany(StatusPinjam::class);
     }
     
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
+    ];
+    
     /**
      * Get the route key for the model.
      *

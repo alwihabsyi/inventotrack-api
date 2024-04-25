@@ -23,6 +23,7 @@ class CreateStatusPinjamsTable extends Migration
             $table->string("status");
             $table->longText("ttd_ketua")->nullable();
             $table->longText("ttd_admin")->nullable();
+            $table->dateTime('tanggal_ambil')->nullable();
             $table->timestamps();
         });
     }

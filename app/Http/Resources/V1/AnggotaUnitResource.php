@@ -18,7 +18,9 @@ class AnggotaUnitResource extends JsonResource
             'id' => $this->id,
             'unitId' => $this->unit_kerja_id,
             'namaAnggota' => $this->nama_anggota,
-            'jumlahBarang' => $this->jumlah_barang
+            'jumlahBarang' => $this->jumlah_barang,
+            'userRole' => $this->user_role,
+            'userEmail' => $this->user_email
         ];
     }
 }

@@ -17,6 +17,7 @@ class CreateAnggotaUnitsTable extends Migration
             $table->id("id");
             $table->integer("unit_kerja_id");
             $table->string("nama_anggota");
+            $table->string("user_email");
             $table->string("user_role");
             $table->integer("jumlah_barang");
             $table->timestamps();

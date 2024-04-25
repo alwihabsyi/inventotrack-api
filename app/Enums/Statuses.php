@@ -8,5 +8,6 @@ class Statuses
     const DITERIMA_ADMIN = "Diterima Admin";
     const DIBATALKAN = "Dibatalkan";
     const DITOLAK = "Ditolak";
+    const SELESAI = "Selesai";
 }
 ?>

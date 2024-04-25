@@ -29,6 +29,8 @@ Route::group(['prefix' => 'v1'], function() {
     Route::apiResource('unit', UnitKerjaController::class)->parameters(['unit' => 'unitKerja']);;
     Route::apiResource('statusPinjam', StatusPinjamController::class);
     Route::post('ajukanBarang', [InventoryController::class, 'ajukanBarang']);
+    Route::post('anggota/store', [AnggotaUnitController::class, 'addAnggota']);
+    Route::get('anggota/signIn/{user_email}', [AnggotaUnitController::class, 'signIn']);
     Route::get('laporanKetua/{anggotaUnit}', [LaporanController::class, 'getLaporanKetua']);
     Route::get('laporanAdmin', [LaporanController::class, 'getLaporanAdmin']);
     Route::put('approveKetua/{id}/update', [StatusPinjamController::class, 'approveKetua']);

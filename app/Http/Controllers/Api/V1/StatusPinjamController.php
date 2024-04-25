@@ -10,7 +10,9 @@ use App\Http\Requests\UpdateStatusPinjamRequest;
 use App\Http\Resources\V1\StatusPinjamCollection;
 use App\Http\Resources\V1\StatusPinjamResource;
 use App\Models\StatusPinjam;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class StatusPinjamController extends Controller
@@ -159,6 +161,7 @@ class StatusPinjamController extends Controller
             $statusPinjam->save();
 
             $statusPinjam->ttd_admin = $signature;
+            $statusPinjam->tanggal_ambil = Carbon::now()->addDay();
             $statusPinjam->save();
 
             DB::commit();

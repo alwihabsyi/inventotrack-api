@@ -16,6 +16,7 @@ class AnggotaUnitFactory extends Factory
         return [
             'nama_anggota' => $this->faker->name(),
             'jumlah_barang' => 0,
+            'user_email' => $this->faker->email(),
             'user_role' => $this->faker->randomElement(['anggota', 'ketua', 'admin', 'kepala'])
         ];
     }
