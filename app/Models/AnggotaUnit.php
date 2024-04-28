@@ -20,6 +20,10 @@ class AnggotaUnit extends Model
     public function statusPinjam() {
         return $this->hasMany(StatusPinjam::class);
     }
+
+    public function historyBarang() {
+        return $this->hasMany(HistoryBarang::class);
+    }
     
     protected $guarded = [
         'id',

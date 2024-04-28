@@ -39,6 +39,7 @@ class StatusPinjamResource extends JsonResource
 
         return [
             'id' => $statusPinjam->id,
+            'inventoryId' => $inventory->id,
             'namaBarang' => $inventory->nama_barang,
             'kodeBarang' => $inventory->kode_barang,
             'fotoBarang' => $inventory->gambar_barang,

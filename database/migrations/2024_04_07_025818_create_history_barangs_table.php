@@ -13,8 +13,9 @@ class CreateHistoryBarangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('history_barang', function (Blueprint $table) {
+        Schema::create('history_barangs', function (Blueprint $table) {
             $table->id("id");
+            $table->integer('anggota_unit_id');
             $table->integer("inventory_id");
             $table->integer("status_pinjams_id");
             $table->string("bukti_ambil");

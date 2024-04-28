@@ -14,11 +14,14 @@ class InventoryFactory extends Factory
     public function definition()
     {
         $stok_awal = $this->faker->numberBetween(0,200);
+        $satuan = $this->faker->randomElement(['pcs', 'pax', 'rim', 'buah']);
 
         return [
             'gambar_barang' => $this->faker->imageUrl(),
             'kode_barang' => $this->faker->numberBetween(0,2000),
             'nama_barang' => $this->faker->colorName(),
+            'deskripsi_barang' => $this->faker->address(),
+            'satuan' => $satuan,
             'stok_awal' => $stok_awal,
             'barang_keluar' => 0,
             'stok_akhir' => $stok_awal

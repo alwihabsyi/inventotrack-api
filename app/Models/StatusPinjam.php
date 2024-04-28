@@ -10,7 +10,7 @@ class StatusPinjam extends Model
     use HasFactory;
 
     public function inventories() {
-        return $this->hasMany(Inventory::class);
+        return $this->belongsTo(Inventory::class);
     }
 
     public function anggotaUnit() {

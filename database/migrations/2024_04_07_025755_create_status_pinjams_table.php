@@ -17,12 +17,11 @@ class CreateStatusPinjamsTable extends Migration
             $table->id("id");
             $table->integer("inventory_id");
             $table->integer("anggota_unit_id");
+            $table->integer("unit_kerja_id");
             $table->integer("jumlah_pinjam");
             $table->dateTime("tanggal_pinjam");
             $table->integer("posisi");
             $table->string("status");
-            $table->longText("ttd_ketua")->nullable();
-            $table->longText("ttd_admin")->nullable();
             $table->dateTime('tanggal_ambil')->nullable();
             $table->timestamps();
         });

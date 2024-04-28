@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUnitKerjaRequest;
 use App\Http\Requests\UpdateUnitKerjaRequest;
+use App\Http\Resources\V1\MonitorResource;
 use App\Http\Resources\V1\UnitKerjaCollection;
 use App\Http\Resources\V1\UnitKerjaResource;
 use App\Models\UnitKerja;
@@ -85,5 +86,19 @@ class UnitKerjaController extends Controller
     public function destroy(UnitKerja $unitKerja)
     {
         //
+    }
+
+    public function monitorKepala()
+    {
+        $limit = request()->query('limit', 10);
+        $unitId = request()->query('unitId', 0);
+        $unitKerja = UnitKerja::whereHas('anggotaUnits')->paginate($limit);
+
+        if ($unitId !== '0') {
+            $unitKerja = UnitKerja::where('id', $unitId)->paginate($limit);
+            return new MonitorResource($unitKerja);
+        }
+
+        return new MonitorResource($unitKerja);
     }
 }

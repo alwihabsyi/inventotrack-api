@@ -9,7 +9,7 @@ class UnitKerja extends Model
 {
     use HasFactory;
 
-    public function anggota() {
+    public function anggotaUnits() {
         return $this->hasMany(AnggotaUnit::class);
     }
 

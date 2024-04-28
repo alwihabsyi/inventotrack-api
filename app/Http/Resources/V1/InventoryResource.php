@@ -14,11 +14,14 @@ class InventoryResource extends JsonResource
      */
     public function toArray($request)
     {
+        $baseUrl = config('app.url');
+
         return [
             'id' => $this->id,
-            'gambarBarang' => $this->gambar_barang,
+            'gambarBarang' => $baseUrl . $this->gambar_barang,
             'kodeBarang' => $this->kode_barang,
             'namaBarang' => $this->nama_barang,
+            'satuan' => $this->satuan,
             'stokAwal' => $this->stok_awal,
             'barangKeluar' => $this->barang_keluar,
             'stokAkhir' => $this->stok_akhir
